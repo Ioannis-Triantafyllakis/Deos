@@ -336,70 +336,26 @@ var menuNav = document.getElementById('menuNav');
 var navbar = menuNav.querySelector('nav');
 var navbarItems = navbar.querySelectorAll('a');
 
-var touchStartX = 0;
-var touchEndX = 0;
-
-menuNav.addEventListener('touchstart', function(e) {
-  touchStartX = e.touches[0].clientX;
-});
-
-menuNav.addEventListener('touchmove', function(e) {
-  touchEndX = e.touches[0].clientX;
-  var deltaX = touchStartX - touchEndX;
-  navbar.style.transform = 'translateX(' + -deltaX + 'px)';
-});
-
-menuNav.addEventListener('touchend', function() {
-  touchStartX = 0;
-  touchEndX = 0;
-});
-
-navbarItems.forEach(function(item) {
-  item.addEventListener('click', function(e) {
-    e.preventDefault();
-    var targetId = this.getAttribute('href').substring(1);
-    var targetElement = document.getElementById(targetId);
-
-    // Scroll smoothly to the target element
-    targetElement.scrollIntoView({ behavior: 'smooth' });
-
-    // Remove 'active' class from all items
-    navbarItems.forEach(function(navItem) {
-      navItem.classList.remove('active');
-    });
-
-    // Add 'active' class to the clicked item
-    this.classList.add('active');
-
-    // Center the navbar on the clicked item, considering overflow
-    centerNavbarOnItem(this);
+// Function to handle the scrolling and highlighting
+function handleScrolling(targetId) {
+  // Scroll smoothly to the target element
+  document.getElementById(targetId).scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
   });
-});
 
-// Intersection Observer to highlight the current category
-var observer = new IntersectionObserver(
-  function(entries) {
-    entries.forEach(function(entry) {
-      var targetId = entry.target.id;
-      var correspondingNavItem = navbar.querySelector('a[href="#' + targetId + '"]');
-      
-      if (entry.isIntersecting) {
-        correspondingNavItem.classList.add('active');
+  // Remove 'active' class from all items
+  navbarItems.forEach(function (navItem) {
+    navItem.classList.remove('active');
+  });
 
-        // Center the highlighted category in the navbar
-        centerNavbarOnItem(correspondingNavItem);
-      } else {
-        correspondingNavItem.classList.remove('active');
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
+  // Add 'active' class to the corresponding item
+  var correspondingNavItem = navbar.querySelector('a[href="#' + targetId + '"]');
+  correspondingNavItem.classList.add('active');
 
-// Observe each menu category
-document.querySelectorAll('.menu-category').forEach(function(category) {
-  observer.observe(category);
-});
+  // Center the navbar on the highlighted category
+  centerNavbarOnItem(correspondingNavItem);
+}
 
 // Function to center the navbar on the clicked item, considering overflow
 function centerNavbarOnItem(item) {
@@ -417,6 +373,43 @@ function centerNavbarOnItem(item) {
     behavior: 'smooth',
   });
 }
+
+// Intersection Observer to highlight the current category
+var observer = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      var targetId = entry.target.id;
+      var correspondingNavItem = navbar.querySelector('a[href="#' + targetId + '"]');
+
+      if (entry.isIntersecting) {
+        correspondingNavItem.classList.add('active');
+
+        // Center the highlighted category in the navbar
+        centerNavbarOnItem(correspondingNavItem);
+      } else {
+        correspondingNavItem.classList.remove('active');
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+// Observe each menu category
+document.querySelectorAll('.menu-category').forEach(function (category) {
+  observer.observe(category);
+});
+
+// Automatically highlight and center the first category on page load
+handleScrolling(navbarItems[0].getAttribute('href').substring(1));
+
+// Handle click events on navbar items
+navbarItems.forEach(function (item) {
+  item.addEventListener('click', function (e) {
+    e.preventDefault();
+    var targetId = this.getAttribute('href').substring(1);
+    handleScrolling(targetId);
+  });
+});
 
   </script>
 
