@@ -332,7 +332,6 @@
   </div>
 
   <script>
-// JavaScript for swiping navbar and highlighting/centering active category
 var menuNav = document.getElementById('menuNav');
 var navbar = menuNav.querySelector('nav');
 var navbarItems = navbar.querySelectorAll('a');
@@ -372,16 +371,8 @@ navbarItems.forEach(function(item) {
     // Add 'active' class to the clicked item
     this.classList.add('active');
 
-    // Center the navbar on the clicked item
-    var itemOffset = this.offsetLeft;
-    var itemWidth = this.offsetWidth;
-    var navbarWidth = navbar.offsetWidth;
-    var scrollAmount = itemOffset - (navbarWidth - itemWidth) / 2;
-
-    navbar.scrollTo({
-      left: scrollAmount,
-      behavior: 'smooth',
-    });
+    // Center the navbar on the clicked item, considering overflow
+    centerNavbarOnItem(this);
   });
 });
 
@@ -394,6 +385,9 @@ var observer = new IntersectionObserver(
       
       if (entry.isIntersecting) {
         correspondingNavItem.classList.add('active');
+
+        // Center the highlighted category in the navbar
+        centerNavbarOnItem(correspondingNavItem);
       } else {
         correspondingNavItem.classList.remove('active');
       }
@@ -406,6 +400,23 @@ var observer = new IntersectionObserver(
 document.querySelectorAll('.menu-category').forEach(function(category) {
   observer.observe(category);
 });
+
+// Function to center the navbar on the clicked item, considering overflow
+function centerNavbarOnItem(item) {
+  var containerWidth = menuNav.offsetWidth;
+  var scrollAmount = item.offsetLeft - (containerWidth - item.offsetWidth) / 2;
+
+  if (scrollAmount < 0) {
+    scrollAmount = 0;
+  } else if (scrollAmount + containerWidth > navbar.scrollWidth) {
+    scrollAmount = navbar.scrollWidth - containerWidth;
+  }
+
+  navbar.scrollTo({
+    left: scrollAmount,
+    behavior: 'smooth',
+  });
+}
 
   </script>
 
