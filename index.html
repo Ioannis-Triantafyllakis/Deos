@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Menu</title>
+  <title>Deos</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -22,6 +22,7 @@
 
     .nav-container {
       overflow: hidden;
+      white-space: nowrap;
       background-color: #444;
       padding: 10px;
       position: fixed;
@@ -30,11 +31,14 @@
       z-index: 1000;
     }
 
+    .nav-wrapper {
+      display: flex;
+      overflow-x: auto;
+    }
+
     nav {
-      display: inline-block;
+      display: flex;
       white-space: nowrap;
-      max-width: 100%; /* Set a maximum width for the nav element */
-      overflow-x: auto; /* Enable horizontal scrolling */
       transition: transform 0.3s;
     }
 
@@ -86,9 +90,7 @@
 </head>
 <body>
 
-  <header>
-    <h1>Restaurant Name</h1>
-  </header>
+
 
   <div class="nav-container" id="menuNav">
     <nav>
@@ -138,297 +140,200 @@
         <span>Appetizer 2</span>
         <span>$7.99</span>
       </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
       <!-- Add more items as needed -->
     </div>
 
-    <div id="main-courses" class="menu-category">
-      <h2>main-courses</h2>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <!-- Add more items as needed -->
-    </div>
-
-    <div id="soups" class="menu-category">
-      <h2>soups</h2>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <!-- Add more items as needed -->
-    </div>
-
-    <div id="salads" class="menu-category">
-      <h2>salads</h2>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <!-- Add more items as needed -->
-    </div>
-
-    <div id="desserts" class="menu-category">
-      <h2>desserts</h2>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <!-- Add more items as needed -->
-    </div>
-
-    <div id="drinks" class="menu-category">
-      <h2>drinks</h2>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 1</span>
-        <span>$5.99</span>
-      </div>
-      <div class="menu-item">
-        <span>Appetizer 2</span>
-        <span>$7.99</span>
-      </div>
-      <!-- Add more items as needed -->
-    </div>
     <!-- Add more menu sections as needed -->
+    <div id="main-courses" class="menu-category">
+        <h2>main-courses</h2>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <!-- Add more items as needed -->
+      </div>
+
+      <div id="soups" class="menu-category">
+        <h2>soups</h2>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <!-- Add more items as needed -->
+      </div>
+
+      <div id="salads" class="menu-category">
+        <h2>salads</h2>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <!-- Add more items as needed -->
+      </div>
+
+      <div id="desserts" class="menu-category">
+        <h2>desserts</h2>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <!-- Add more items as needed -->
+      </div>
+
+      <div id="drinks" class="menu-category">
+        <h2>drinks</h2>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 1</span>
+          <span>$5.99</span>
+        </div>
+        <div class="menu-item">
+          <span>Appetizer 2</span>
+          <span>$7.99</span>
+        </div>
+        <!-- Add more items as needed -->
+      </div>
 
   </div>
 
   <script>
-    // JavaScript for swiping navbar, highlighting active category, and centering the active category
+    // JavaScript for swiping navbar and highlighting active category
     var menuNav = document.getElementById('menuNav');
-    var navbar = menuNav.querySelector('nav');
     var navbarItems = menuNav.querySelectorAll('nav a');
 
     var touchStartX = 0;
@@ -441,7 +346,7 @@
     menuNav.addEventListener('touchmove', function(e) {
       touchEndX = e.touches[0].clientX;
       var deltaX = touchStartX - touchEndX;
-      navbar.style.transform = 'translateX(' + -deltaX + 'px)';
+      menuNav.querySelector('nav').style.transform = 'translateX(' + -deltaX + 'px)';
     });
 
     menuNav.addEventListener('touchend', function() {
@@ -465,10 +370,6 @@
 
         // Add 'active' class to the clicked item
         this.classList.add('active');
-
-        // Center the active category in the navbar
-        var scrollLeft = this.offsetLeft - (navbar.offsetWidth - this.offsetWidth) / 2;
-        navbar.scrollTo({ left: scrollLeft, behavior: 'smooth' });
       });
     });
 
